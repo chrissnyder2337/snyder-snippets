@@ -1,4 +1,4 @@
-<md-card class="snippet-card" *ngFor="let snippet of snippets">
+<md-card class="snippet-card" *ngFor="let snippet of snippets | async">
   <md-card-header>
     <div md-card-avatar>
       <md-icon color="accent" aria-hidden="true">code</md-icon> 

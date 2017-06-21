@@ -15,7 +15,7 @@ import { SnippetService } from './shared/snippet.service';
 })
 export class SnippetsComponent implements OnInit {
 
-  snippets: Snippet[];
+  snippets: Observable<Snippet[]>;
 
   constructor(
     private snippetService: SnippetService,
@@ -23,7 +23,7 @@ export class SnippetsComponent implements OnInit {
   ) { }
 
   getSnippets(): void {
-    this.snippetService.getSnippets().then(snippets => this.snippets = snippets);
+    this.snippets = this.snippetService.getSnippets();
   }
 
   goToSnippet(snippet: Snippet): void {

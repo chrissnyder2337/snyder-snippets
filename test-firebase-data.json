@@ -1,0 +1,23 @@
+{
+  "v0" : {
+    "snippets" : [ {
+      "body" : "the body of the snippet",
+      "description" : "A cool snippet",
+      "id" : 0,
+      "tags" : [ "mysql", "php", "bash" ],
+      "title" : "Snippet 0"
+    }, {
+      "body" : "the body of the snippet1",
+      "description" : "A cool snippet1",
+      "id" : 1,
+      "tags" : [ "mysql", "php", "bash" ],
+      "title" : "Snippet 1"
+    }, {
+      "body" : "the body of the snippet2",
+      "description" : "A cool snippet2",
+      "id" : 2,
+      "tags" : [ "mysql", "php", "bash" ],
+      "title" : "Snippet 2"
+    } ]
+  }
+}

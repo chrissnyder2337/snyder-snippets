@@ -11,4 +11,8 @@ export class SnippetService {
   getSnippets(): Promise<Snippet[]> {
     return new Promise(resolve => resolve(SNIPPETS));
   }
+
+  getSnippet(id: number): Promise<Snippet> {
+    return this.getSnippets().then(snippets => snippets.find(snippet => snippet.id === id));
+  }
 }

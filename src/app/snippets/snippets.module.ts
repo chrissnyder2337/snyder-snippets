@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { MdIconModule, MdButtonModule, MdCardModule, MdToolbarModule, MdInputModule } from '@angular/material';
+import { MdSnackBarModule, MdIconModule, MdButtonModule, MdCardModule, MdToolbarModule, MdInputModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SnippetsComponent } from './snippets.component';
@@ -22,6 +22,7 @@ import { SnippetEditComponent } from './snippet-edit/snippet-edit.component';
     MdCardModule,
     MdToolbarModule,
     MdInputModule,
+    MdSnackBarModule,
     FlexLayoutModule
   ],
   declarations: [SnippetsComponent, SnippetDetailComponent, SnippetEditComponent]

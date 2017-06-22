@@ -25,7 +25,8 @@
           <input mdInput [(ngModel)]="snippet.tags" placeholder="Tags">
         </md-input-container>
         <div>
-          <button md-fab type="submit" (click)="saveSnippet()"><md-icon>check</md-icon></button>
+          <button md-fab type="submit" (click)="saveSnippet()"><md-icon>save</md-icon></button>
+          <button md-mini-fab color="warn" (click)="cancel()"><md-icon>clear</md-icon></button>
         </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import { MdSnackBar } from '@angular/material';
 
 import { Snippet } from '../shared/snippet';
 import { SnippetService } from '../shared/snippet.service';
@@ -19,7 +20,9 @@ export class SnippetEditComponent implements OnInit {
 
   constructor(
     private snippetService: SnippetService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private snackbar: MdSnackBar
   ) { }
 
   ngOnInit() {
@@ -41,13 +44,18 @@ export class SnippetEditComponent implements OnInit {
   }
 
   saveSnippet() {
-    // TODO: do stuff on submitted
-    console.log("Submitted");
+    // TODO: Add some validation.
 
     // Handle the tags which may be submitted as comma seperated string.
     this.cleanTags();
 
     this.snippetService.updateSnippet(this.snippet);
-    console.log(this.snippet);
+    this.snackbar.open('Snippet Saved', '', {duration: 2000});
+
+    this.router.navigate(['/snippets', this.snippet.id]);
+  }
+
+  cancel() {
+    this.router.navigate(['/snippets', this.snippet.id]);
   }
 }

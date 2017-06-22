@@ -1,0 +1,30 @@
+<div color="primary" class="primary-header">
+  <h1>{{snippet.title}}</h1></div>
+
+<label>ID: </label>{{snippet.id}}
+<label>Title: </label> {{snippet.title}}
+<label>description: </label> {{snippet.description}}
+<label>Body: </label> {{snippet.body}}
+<label>Tags: </label> {{snippet.tags}}
+
+
+<div class="edit-snippet-wrapper">
+
+  <div class="edit-snippet-container" >
+    <md-toolbar> Edit <em>&nbsp;<strong>{{snippet.title}}</strong></em></md-toolbar>
+    <div class="form-wrapper" fxLayout="column" fxLayoutWrap="wrap">
+      <md-input-container class="full-width">
+        <input mdInput [(ngModel)]="snippet.title" placeholder="Title">
+      </md-input-container>
+      <md-input-container>
+        <textarea mdInput mdTextareaAutosize [(ngModel)]="snippet.description" placeholder="Description"></textarea>
+      </md-input-container>
+      <md-input-container>
+        <textarea mdInput mdTextareaAutosize [(ngModel)]="snippet.body" placeholder="Snippet Body"></textarea>
+      </md-input-container>
+      <md-input-container>
+        <input mdInput [(ngModel)]="snippet.tags" placeholder="Tags">
+      </md-input-container>
+    </div>
+  </div>
+</div>

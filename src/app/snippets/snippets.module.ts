@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { MdIconModule, MdButtonModule, MdCardModule, MdToolbarModule, MdInputModule } from '@angular/material';
@@ -13,13 +14,14 @@ import { SnippetEditComponent } from './snippet-edit/snippet-edit.component';
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
+    FormsModule,
     SnippetsRoutingModule,
     MdIconModule,
     MdButtonModule,
     MdCardModule,
     MdToolbarModule,
     MdInputModule,
-    FormsModule,
     FlexLayoutModule
   ],
   declarations: [SnippetsComponent, SnippetDetailComponent, SnippetEditComponent]

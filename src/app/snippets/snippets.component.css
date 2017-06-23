@@ -7,9 +7,13 @@
 .snippet-avitar {
   background-image: url('../../assets/img/code-image.jpg');
   background-size: cover;
+  height: 55px;
+  width: 55px;
 }
 
-.mat-card-title {
-    font-weight: bold;
-    font-size: 1.2rem;
+.id {
+    position: fixed;
+    left: 0;
+    margin: 10px;
+    color: #bbb;
 }

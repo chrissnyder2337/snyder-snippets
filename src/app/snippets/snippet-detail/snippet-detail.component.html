@@ -1,9 +1,25 @@
-<div color="primary" class="primary-header">
-  <h1>{{snippet.title}}</h1></div>
+<div class="snippet-wrapper">
+  <h1>{{(snippet)?.title}}</h1>
 
-<label>ID: </label>{{snippet.id}}
-<label>Title: </label> {{snippet.title}}
-<label>description: </label> {{snippet.description}}
-<label>Body: </label> {{snippet.body}}
-<label>Tags: </label> {{snippet.tags}}
 
+  <md-chip-list *ngIf="snippet else loadingTags">
+    <md-chip *ngFor="let tag of snippet.tags">{{tag}}</md-chip>
+  </md-chip-list>
+  <ng-template #loadingTags>
+    <md-spinner class="loading-tags"></md-spinner> Loading tags...
+  </ng-template>
+
+  <div class="snippet-description">
+    {{snippet?.description}}
+  </div>
+
+  <div class="snippet-body" *ngIf="snippet">
+    <markdown [data]="snippet.body"></markdown>
+  </div>
+  <hr/>
+  <p>
+    <small><label>ID: </label>{{snippet?.id}}</small>
+  </p>
+  <a md-raised-button color="accent" [routerLink]="['/snippets',snippet?.id, 'edit']">Edit Snippet</a>
+
+</div>

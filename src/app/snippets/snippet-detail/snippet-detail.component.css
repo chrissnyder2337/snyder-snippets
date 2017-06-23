@@ -1,18 +1,21 @@
-.primary-header {
-    padding-left: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background: #673ab7;
+.snippet-wrapper {
+    margin: 20px 70px 50px 70px;
 }
 
-h1 {
-    color: rgba(255, 255, 255, 0.87);
-    font-size: 30px;
-    font-weight: 300;
-    margin: 0;
-    padding: 50px;
+.loading-tags {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
+
+.snippet-body {
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+
+.snippet-description {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-style: italic;
+    padding-left: 30px;
 }

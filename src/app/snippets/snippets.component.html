@@ -1,20 +1,14 @@
-<md-card class="snippet-card" *ngFor="let snippet of snippets | async">
+<md-card class="snippet-card" *ngFor="let snippet of snippets | async" (click)="goToSnippet(snippet)" >
   <md-card-header>
-    <div md-card-avatar>
-      <md-icon color="accent" aria-hidden="true">code</md-icon> 
-      <span> </span>
-    </div>
+    <div md-card-avatar class="snippet-avitar"></div>
     <md-card-title> <h2>{{snippet.title}}</h2></md-card-title>
-    <md-card-subtitle> {{snippet.tags}}</md-card-subtitle>
+    <md-card-subtitle>{{snippet.tags.join(", ")}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
-    <label>ID: </label>{{snippet.id}}
-    <label>Title: </label> {{snippet.title}}
-    <label>description: </label> {{snippet.description}}
-    <label>Body: </label> {{snippet.body}}
-    <label>Tags: </label> {{snippet.tags}}
+    <p>{{snippet.description}}</p>
   </md-card-content>
-  <md-card-actions>
-    <button md-raised-button (click)="goToSnippet(snippet)">View Full Snippet</button>
+  <md-card-actions align="end">
+    <div class="id"><label>ID: </label>{{snippet.id}}</div>
+    <button md-raised-button (click)="goToSnippet(snippet)" >View Full Snippet</button>
   </md-card-actions>
 </md-card>

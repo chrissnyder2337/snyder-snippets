@@ -7,7 +7,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import 'hammerjs';
 
-import { MdToolbarModule } from '@angular/material';
+import {
+  MdToolbarModule,
+  MdIconModule,
+  MdButtonModule,
+  MdDialogModule,
+  MdTooltipModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +32,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdIconModule,
+    MdButtonModule,
+    MdDialogModule
   ],
   providers: [AuthenticationProvider],
   bootstrap: [AppComponent]

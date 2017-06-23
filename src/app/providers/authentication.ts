@@ -19,4 +19,9 @@ export class AuthenticationProvider {
     this.firebase.auth.signOut();
   }
 
+  // TODO: Might want to provide this state in a differnt way
+  getUser() {
+    return this.user;
+  }
+
 }

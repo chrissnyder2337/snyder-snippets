@@ -24,3 +24,32 @@
     margin-right: 100px;
     }
 }
+
+.warn {
+    padding: 10px;
+    color: red;
+    font-style: italic;
+}
+
+/* TODO: Load the preview as a component*/
+.snippet-wrapper {
+    margin: 20px 70px 50px 70px;
+}
+
+.loading-tags {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
+
+.snippet-body {
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+
+.snippet-description {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-style: italic;
+    padding-left: 30px;
+}

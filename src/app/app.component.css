@@ -2,3 +2,9 @@
     position: relative;
     z-index: 10;
 }
+
+.site-name {
+    margin-left: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+}

@@ -1,5 +1,8 @@
+<!-- // TODO: Move this naviagation ito it's own component -->
 <md-toolbar color="primary" class="app-navbar mat-elevation-z4">
-  {{title}}
+  <a md-button [routerLink]="['/snippets']">
+    <md-icon>weekend</md-icon><span class="site-name">{{title}}</span>
+  </a>
 </md-toolbar>
 
 <router-outlet></router-outlet>

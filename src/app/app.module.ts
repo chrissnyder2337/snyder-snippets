@@ -17,7 +17,7 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationProvider } from './providers/authentication'
+import { FirebaseAuth } from './shared/firebase-auth'
 import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
@@ -35,9 +35,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MdToolbarModule,
     MdIconModule,
     MdButtonModule,
-    MdDialogModule
+    MdDialogModule,
+    MdTooltipModule
   ],
-  providers: [AuthenticationProvider],
+  providers: [FirebaseAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

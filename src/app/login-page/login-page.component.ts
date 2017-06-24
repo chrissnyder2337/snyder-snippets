@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationProvider } from '../providers/authentication'
+import { FirebaseAuth } from '../shared/firebase-auth'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
@@ -11,7 +11,7 @@ import * as firebase from 'firebase/app';
 })
 export class LoginPageComponent implements OnInit {
   user;
- constructor(public afService: AuthenticationProvider, private router: Router) {}
+ constructor(public afService: FirebaseAuth, private router: Router) {}
 
   login() {
     this.afService.login();

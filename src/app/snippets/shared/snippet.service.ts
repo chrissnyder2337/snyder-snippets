@@ -26,7 +26,7 @@ export class SnippetService {
   }
 
   updateSnippet(snippet: Snippet) {
-    const snippetOnbservable = this.firebaseDb.object(`/v0/snippets/${snippet.id}`);
-    snippetOnbservable.update(snippet);
+    const snippetObservable = this.firebaseDb.object(`/v0/snippets/${snippet.id}`);
+    snippetObservable.update(snippet);
   }
 }

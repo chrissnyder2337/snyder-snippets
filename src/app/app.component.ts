@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MdDialog } from '@angular/material';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,6 @@ export class AppComponent {
   ) { }
 
   openLoginDialog() {
-    this.dialog.open(LoginPageComponent);
+    this.dialog.open(LoginComponent);
   }
 }

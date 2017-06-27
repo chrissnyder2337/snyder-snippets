@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class AuthenticationProvider {
+export class FirebaseAuth {
 
   user: Observable<firebase.User>;
   constructor(

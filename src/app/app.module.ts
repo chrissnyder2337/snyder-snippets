@@ -17,13 +17,13 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationProvider } from './providers/authentication'
-import { LoginPageComponent } from './login-page/login-page.component';
+import { FirebaseAuth } from './shared/firebase-auth'
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +35,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MdToolbarModule,
     MdIconModule,
     MdButtonModule,
-    MdDialogModule
+    MdDialogModule,
+    MdTooltipModule
   ],
-  providers: [AuthenticationProvider],
+  providers: [FirebaseAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

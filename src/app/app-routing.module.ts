@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SnippetsModule } from './snippets/snippets.module';
-import { LoginPageComponent } from './login-page/login-page.component'
+import { LoginComponent } from './login/login.component'
 
 const routes: Routes = [
     {
@@ -12,7 +12,7 @@ const routes: Routes = [
     },
     {
       path: 'login',
-      component: LoginPageComponent
+      component: LoginComponent
     }
 ];
 

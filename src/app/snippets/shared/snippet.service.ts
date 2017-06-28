@@ -17,12 +17,31 @@ export class SnippetService {
     this.snippets = this.firebaseDb.list('/v0/snippets');
   }
 
+  getNewSnippet(): Snippet {
+    return     {
+      id: null,
+      title: '',
+      description: '',
+      body: '',
+      tags: []
+    }
+  }
+
   getSnippets(): FirebaseListObservable<Snippet[]> {
     return this.snippets;
   }
 
-  getSnippet(id: number): FirebaseObjectObservable<Snippet> {
+  getSnippet(id: string): FirebaseObjectObservable<Snippet> {
     return this.firebaseDb.object(`/v0/snippets/${id}`);
+  }
+
+  addSnippet(snippet: Snippet) {
+    const newKey = this.firebaseDb.database.ref('/v0/snippets').push().key;
+    snippet.id = newKey;
+    const update = {};
+    update[`/v0/snippets/${newKey}`] = snippet;
+    this.firebaseDb.database.ref().update(update);
+    // this.snippets.push(snippet);
   }
 
   updateSnippet(snippet: Snippet) {

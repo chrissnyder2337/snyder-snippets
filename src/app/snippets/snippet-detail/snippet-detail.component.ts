@@ -22,7 +22,7 @@ export class SnippetDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.switchMap((params: Params) => this.snippetService.getSnippet(+params['id']))
+    this.route.params.switchMap((params: Params) => this.snippetService.getSnippet(params['id']))
       .subscribe(snippet => this.snippet = snippet);
   }
 

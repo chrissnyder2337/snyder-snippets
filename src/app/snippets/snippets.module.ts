@@ -20,6 +20,7 @@ import { SnippetsComponent } from './snippets.component';
 import { SnippetsRoutingModule } from './snippets.routing';
 import { SnippetDetailComponent } from './snippet-detail/snippet-detail.component';
 import { SnippetEditComponent } from './snippet-edit/snippet-edit.component';
+import { SnippetAddComponent } from './snippet-add/snippet-add.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,6 @@ import { SnippetEditComponent } from './snippet-edit/snippet-edit.component';
     FlexLayoutModule,
     MarkdownModule.forRoot()
   ],
-  declarations: [SnippetsComponent, SnippetDetailComponent, SnippetEditComponent]
+  declarations: [SnippetsComponent, SnippetDetailComponent, SnippetEditComponent, SnippetAddComponent]
 })
 export class SnippetsModule { }

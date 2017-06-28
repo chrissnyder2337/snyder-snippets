@@ -3,6 +3,6 @@ export class Snippet {
     title: string;
     description: string;
     body: string;
-    tags: string[];
+    tags: null|string[];
     timestamp: any;
 }

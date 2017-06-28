@@ -2,7 +2,7 @@
   <md-card-header>
     <div md-card-avatar class="snippet-avitar"></div>
     <md-card-title> <h2>{{snippet.title}}</h2></md-card-title>
-    <md-card-subtitle>{{snippet.tags.join(", ")}}</md-card-subtitle>
+    <md-card-subtitle>{{snippet.tags?.join(", ")}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <p>{{snippet.description}}</p>
@@ -13,4 +13,4 @@
   </md-card-actions>
 </md-card>
 
-<a md-raised-button [routerLink]="['/snippets-add']">Add New Snippet</a>
+<a md-raised-button (click)="addSnippet()">Add New Snippet</a>

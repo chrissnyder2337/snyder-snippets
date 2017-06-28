@@ -14,7 +14,12 @@ export class SnippetService {
   constructor(
     private firebaseDb: AngularFireDatabase
   ) {
-    this.snippets = this.firebaseDb.list('/v0/snippets');
+    this.snippets = this.firebaseDb.list(
+      '/v0/snippets',
+      { query: {
+      orderByKey: true
+    }}
+    ).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
   }
 
   getNewSnippet(): Snippet {

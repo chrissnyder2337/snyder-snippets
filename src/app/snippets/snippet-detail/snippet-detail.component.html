@@ -3,7 +3,7 @@
 
 
   <md-chip-list *ngIf="snippet else loadingTags">
-    <md-chip *ngFor="let tag of snippet.tags">{{tag}}</md-chip>
+    <md-chip *ngFor="let tag of snippet?.tags">{{tag}}</md-chip>
   </md-chip-list>
   <ng-template #loadingTags>
     <md-spinner class="loading-tags"></md-spinner> Loading tags...
@@ -20,6 +20,6 @@
   <p>
     <small><label>ID: </label>{{snippet?.id}}</small>
   </p>
-  <a md-raised-button color="accent" [routerLink]="['/snippets',snippet?.id, 'edit']">Edit Snippet</a>
+  <a md-raised-button color="accent" [routerLink]="['/snippets',snippet?.id, 'edit']" *ngIf="snippet">Edit Snippet</a>
 
 </div>

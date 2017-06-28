@@ -4,4 +4,5 @@ export class Snippet {
     description: string;
     body: string;
     tags: string[];
+    timestamp: any;
 }

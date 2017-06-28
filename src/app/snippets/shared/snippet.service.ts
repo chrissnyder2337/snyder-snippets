@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-
+import * as firebase from 'firebase';
 
 import { Snippet } from './snippet';
 import { SNIPPETS } from './mock-snippets';
@@ -23,7 +23,8 @@ export class SnippetService {
       title: '',
       description: '',
       body: '',
-      tags: []
+      tags: [],
+      timestamp: null
     }
   }
 
@@ -38,10 +39,10 @@ export class SnippetService {
   addSnippet(snippet: Snippet) {
     const newKey = this.firebaseDb.database.ref('/v0/snippets').push().key;
     snippet.id = newKey;
+    snippet.timestamp = firebase.database.ServerValue.TIMESTAMP;
     const update = {};
     update[`/v0/snippets/${newKey}`] = snippet;
     this.firebaseDb.database.ref().update(update);
-    // this.snippets.push(snippet);
   }
 
   updateSnippet(snippet: Snippet) {

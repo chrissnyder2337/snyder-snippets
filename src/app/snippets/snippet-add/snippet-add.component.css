@@ -1,0 +1,55 @@
+.edit-snippet-container {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  margin: 4px;
+}
+
+.full-width {
+  width:100%;
+}
+
+.form-wrapper {
+  padding: 1rem;
+}
+
+
+.edit-snippet-wrapper {
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media only screen and (min-width: 840px) {
+  .edit-snippet-wrapper {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+.warn {
+  padding: 10px;
+  color: red;
+  font-style: italic;
+}
+
+/* TODO: Load the preview as a component*/
+.snippet-wrapper {
+  margin: 20px 70px 50px 70px;
+}
+
+.loading-tags {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+}
+
+.snippet-body {
+  margin-top:40px;
+  margin-bottom: 40px;
+}
+
+.snippet-description {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-style: italic;
+  padding-left: 30px;
+}

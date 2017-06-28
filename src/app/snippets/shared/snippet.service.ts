@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-
+import * as firebase from 'firebase';
 
 import { Snippet } from './snippet';
 import { SNIPPETS } from './mock-snippets';
@@ -14,15 +14,40 @@ export class SnippetService {
   constructor(
     private firebaseDb: AngularFireDatabase
   ) {
-    this.snippets = this.firebaseDb.list('/v0/snippets');
+    this.snippets = this.firebaseDb.list(
+      '/v0/snippets',
+      { query: {
+      orderByKey: true
+    }}
+    ).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+  }
+
+  getNewSnippet(): Snippet {
+    return     {
+      id: null,
+      title: '',
+      description: '',
+      body: '',
+      tags: [],
+      timestamp: null
+    }
   }
 
   getSnippets(): FirebaseListObservable<Snippet[]> {
     return this.snippets;
   }
 
-  getSnippet(id: number): FirebaseObjectObservable<Snippet> {
+  getSnippet(id: string): FirebaseObjectObservable<Snippet> {
     return this.firebaseDb.object(`/v0/snippets/${id}`);
+  }
+
+  addSnippet(snippet: Snippet) {
+    const newKey = this.firebaseDb.database.ref('/v0/snippets').push().key;
+    snippet.id = newKey;
+    snippet.timestamp = firebase.database.ServerValue.TIMESTAMP;
+    const update = {};
+    update[`/v0/snippets/${newKey}`] = snippet;
+    this.firebaseDb.database.ref().update(update);
   }
 
   updateSnippet(snippet: Snippet) {

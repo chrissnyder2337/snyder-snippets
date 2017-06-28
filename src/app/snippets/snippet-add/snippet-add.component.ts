@@ -7,16 +7,15 @@ import { Snippet } from '../shared/snippet';
 import { SnippetService } from '../shared/snippet.service';
 
 @Component({
-  selector: 'app-snippet-edit',
-  templateUrl: './snippet-edit.component.html',
-  styleUrls: ['./snippet-edit.component.css'],
+  selector: 'app-snippet-add',
+  templateUrl: './snippet-add.component.html',
+  styleUrls: ['./snippet-add.component.css'],
   providers: [
     SnippetService
   ]
 })
-export class SnippetEditComponent implements OnInit {
+export class SnippetAddComponent implements OnInit {
   @Input() snippet: Snippet;
-  snippetLoaded = false
 
   constructor(
     private snippetService: SnippetService,
@@ -26,8 +25,7 @@ export class SnippetEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.switchMap((params: Params) => this.snippetService.getSnippet(params['id']))
-      .subscribe(snippet => {this.snippet = snippet; this.snippetLoaded = true; });
+    this.snippet = this.snippetService.getNewSnippet();
   }
 
   /**
@@ -43,19 +41,18 @@ export class SnippetEditComponent implements OnInit {
     this.snippet.tags = this.snippet.tags.map(tag => tag.trim());
   }
 
-  saveSnippet() {
-    // TODO: Add some validation.
-
+  addSnippet() {
     // Handle the tags which may be submitted as comma seperated string.
     this.cleanTags();
 
-    this.snippetService.updateSnippet(this.snippet);
-    this.snackbar.open('Snippet Saved', '', {duration: 2000});
+    this.snippetService.addSnippet(this.snippet);
+    this.snackbar.open('Snippet Added', '', {duration: 2000});
+    this.router.navigate(['/snippets']);
 
-    this.router.navigate(['/snippets', this.snippet.id]);
   }
 
   cancel() {
-    this.router.navigate(['/snippets', this.snippet.id]);
+    this.router.navigate(['/snippets']);
   }
+
 }

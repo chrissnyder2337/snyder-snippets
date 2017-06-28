@@ -1,7 +1,8 @@
 export class Snippet {
-    id: number;
+    id: string;
     title: string;
     description: string;
     body: string;
-    tags: string[];
+    tags: null|string[];
+    timestamp: any;
 }

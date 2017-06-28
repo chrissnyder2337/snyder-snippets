@@ -30,6 +30,10 @@ export class SnippetsComponent implements OnInit {
     this.router.navigate(['/snippets', snippet.id]);
   }
 
+  addSnippet(): void {
+    this.router.navigate(['/snippets-add']);
+  }
+
   ngOnInit() {
     this.getSnippets();
   }
